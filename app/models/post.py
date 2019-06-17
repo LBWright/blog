@@ -7,11 +7,9 @@ class Post(db.Model):
     title = db.Column(db.String(100), nullable=False)
     slug = db.Column(db.String(20))
     content = db.Column(db.Text, nullable=False)
-    created = db.Column(
-        db.DateTime, nullable=False, default=datetime.utcnow)
-    author_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
-    author = db.relationship(
-        'User', backref=db.backref('author', lazy='joined'))
+    created = db.Column(db.DateTime, nullable=False, default=datetime.utcnow)
+    author_id = db.Column(db.Integer, db.ForeignKey("user.id"), nullable=False)
+    author = db.relationship("User", backref=db.backref("author", lazy="joined"))
 
     def save(self):
         db.session.add(self)
