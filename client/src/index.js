@@ -1,8 +1,12 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
+import { HashRouter } from 'react-router-dom'
+import 'babel-polyfill'
+import App from './components/App'
 
-const App = () => (
-	<h1>Welcome to Reactipy</h1>
+ReactDOM.render(
+    <HashRouter>
+        <App />
+    </HashRouter>,
+    document.getElementById('root')
 )
-
-ReactDOM.render(<App />, document.getElementById('root'))
