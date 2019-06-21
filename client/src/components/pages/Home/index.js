@@ -1,6 +1,7 @@
 import React from 'react'
 import moment from 'moment'
 import useData from '../../../hooks/useData'
+import Categories from '../../layout/Categories'
 
 export default function Home() {
     const [posts, loading, error] = useData({
@@ -37,19 +38,17 @@ export default function Home() {
         <div>
             {playArray.map(post => {
                 return (
-                    <div className="card my-3 bg-primary mx-5">
-                        <div className="card-header">
-                            <span class="badge  badge-primary m-1">python</span>
-                            <span class="badge  badge-primary m-1">
-                                javascript
-                            </span>
-                            <span class="badge  badge-primary m-1">react</span>
+                    <div className="my-5 mx-5 card">
+                        <div className="card-header bg-light">
+                            <Categories
+                                categories={['python', 'javascript', 'react']}
+                            />
                         </div>
                         <div class="card-body text-center">
                             <h5 class="card-title">
                                 Blog Post Title{' '}
                                 <small className="text-muted">
-                                    {moment().format('MMMM Do YYYY')}
+                                    {moment(Date.now()).format('MMMM Do YYYY')}
                                 </small>
                             </h5>
                             <p class="card-text">
