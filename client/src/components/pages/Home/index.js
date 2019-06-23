@@ -38,24 +38,24 @@ export default function Home() {
         <div>
             {playArray.map(post => {
                 return (
-                    <div className="my-5 mx-5 card">
+                    <div key={Math.random()} className="my-5 mx-5 card">
                         <div className="card-header bg-light">
                             <Categories
                                 categories={['python', 'javascript', 'react']}
                             />
                         </div>
-                        <div class="card-body text-center">
-                            <h5 class="card-title">
+                        <div className="card-body text-center">
+                            <h5 className="card-title">
                                 Blog Post Title{' '}
                                 <small className="text-muted">
                                     {moment(Date.now()).format('MMMM Do YYYY')}
                                 </small>
                             </h5>
-                            <p class="card-text">
+                            <p className="card-text">
                                 This post is about some pretty cool stuff.
                                 Honestly, I really like that sort of stuff.
                             </p>
-                            <a href="#" class="btn btn-success">
+                            <a href="#" className="btn btn-success">
                                 Read it
                             </a>
                         </div>

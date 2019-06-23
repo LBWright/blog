@@ -4,7 +4,7 @@ const categoryMap = {
     python: 'success',
     javascript: 'warning text-dark',
     react: 'info',
-    attitude: 'secondary',
+    devlife: 'secondary',
 }
 
 export default function Categories({ categories }) {
